@@ -31,7 +31,7 @@ function createBookList(books) {
         liBooks.style.margin = '25px';
         liBooks.style.fontSize = '1.5em';
         img.style.margin = '10px';
-        paragraph.innerHTML = `${books[i].title} by ${books[i].author}`;
+        paragraph.innerText = `${books[i].title} by ${books[i].author}`;
         if (books[i].alreadyRead === true) {
             liBooks.style.backgroundColor = 'green';
         } else {

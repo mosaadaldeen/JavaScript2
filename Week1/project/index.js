@@ -33,6 +33,4 @@ const randomQuote = () => {
     let randomNumber = Math.floor(Math.random() * quotes.length);
     let randomName = `<br> ${quotes[randomNumber].name} <br> ${quotes[randomNumber].author} <br>`;
     document.getElementById('random-quote').innerHTML = randomName;
-    console.log(randomName);
-    if (!randomQuote) return;
 };

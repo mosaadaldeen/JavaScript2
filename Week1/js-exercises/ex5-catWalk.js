@@ -12,23 +12,50 @@
  
 */
 
-var img = document.getElementsByTagName('img')[0];
-img.style.left = '0px';
+// var img = document.getElementsByTagName('img')[0];
+// img.style.left = '0px';
+// const middlePoint = window.innerWidth / 2 - img.width / 2;
+// let catTimer;
+
+// function catWalk() {
+//     var currentLeft = parseInt(img.style.left);
+//     img.style.left = currentLeft + 10 + 'px';
+//     if (currentLeft > window.innerWidth - img.width) {
+//         img.style.left = 10 + 'px';
+//     }
+//     if (img.style.left > middlePoint) {
+//         img.src = 'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
+//         setTimeout(() => {
+//             img.src = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
+//             setInterval(catWalk, 50);
+//         }, 5000);
+//     }
+// }
+// setInterval(catWalk, 50);
+
+
+
+
+
+let img = document.querySelector("img");
+let positionOfCat = 0;
+let completedTour = false;
 
 function catWalk() {
-    var currentLeft = parseInt(img.style.left);
-    img.style.left = currentLeft + 10 + 'px';
-    if (currentLeft > window.innerWidth - img.width) {
-        img.style.left = '0px';
+    if (positionOfCat > window.innerWidth) {
+        positionOfCat = -img.width;
+        completedTour = false;
     }
-    let middleScreen = window.innerWidth / 2 - img.width / 2;
-    if (currentLeft >= middleScreen) {
-        img.src = 'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
-        setTimeout(function() {
-            img.src = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
-
-        }, 1000);
-
+    positionOfCat += 10;
+    img.style.left = positionOfCat + "px";
+    if (positionOfCat > window.innerWidth / 2 - img.width / 2 && !completedTour) {
+        completedTour = true;
+        clearInterval(interval);
+        img.src = "https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif";
+        setTimeout(() => {
+            img.src = "http://www.anniemation.com/clip_art/images/cat-walk.gif";
+            interval = setInterval(catWalk, 50);
+        }, 5000);
     }
 }
-window.setInterval(catWalk, 50);
+let interval = setInterval(catWalk, 50);

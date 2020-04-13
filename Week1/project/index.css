@@ -6,10 +6,6 @@
     font-family: monospace;
 }
 
-.random-quote {
-    margin-top: 30px;
-}
-
 .random-quote .container {
     background-color: white;
     width: 70%;
@@ -19,17 +15,16 @@
     border: 2px solid black;
 }
 
-.random-quote .container button {
+.submit {
     padding: 10px;
-    margin-left: 80%;
     margin-top: 10px;
+    margin-right: 20px;
     margin-bottom: 10px;
     background: orange;
     outline: none;
+    color: white;
     cursor: pointer;
     border: none;
-    width: 90px;
-    /* margin-right: 95%; */
 }
 
 .random-quote .container p {
@@ -38,18 +33,44 @@
     font-weight: bolder;
     margin: 25px;
     background-color: white;
-    color: orange;
+    color: black;
 }
 
 #random-quote {
     font-weight: bolder;
     text-align: center;
     font-size: 2em;
+    height: 170px;
     background-color: white;
     color: orange;
 }
 
-#random #author {
-    margin-left: 75px;
+.buttons {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons-links {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    width: 100px;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.buttons-links button {
+    margin: 14px;
+    padding: 7px;
+    cursor: pointer;
+}
+
+.buttons-links button i {
+    background-color: orange;
     color: white;
+    margin-left: 10px;
+    font-size: 1.3em;
+    width: 20px;
 }

@@ -13,8 +13,14 @@
 
 function displayCurrentTime() {
     // your code goes in here
-    var today = new Date();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    let today = new Date();
+    let seconds = today.getSeconds();
+    let minutes = today.getMinutes();
+    let hours = today.getHours();
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    hours = hours < 10 ? "0" + hours : hours;
+    let time = hours + ":" + minutes + ":" + seconds;
     document.querySelector('body').innerText = time;
 }
 
