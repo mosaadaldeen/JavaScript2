@@ -9,13 +9,23 @@
  */
 
 function createHTMLList(arr) {
-  // your code goes in here
+    // your code goes in here
+    let body = document.querySelector('body');
+    let ulElement = document.createElement('ul');
+    body.append(ulElement);
+    arr.forEach(hobby => {
+        let liElement = document.createElement('li');
+        liElement.innerText = hobby;
+        ulElement.append(liElement);
+    });
 }
 
 const myHobbies = [
-  'Meditation',
-  'Reading',
-  'Programming',
-  'Hanging out with friends',
-  'Going to the gym',
+    'Meditation',
+    'Reading',
+    'Programming',
+    'Hanging out with friends',
+    'Going to the gym',
 ];
+
+createHTMLList(myHobbies);
