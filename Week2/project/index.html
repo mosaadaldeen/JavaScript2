@@ -2,16 +2,107 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pomodoro Clock</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Pomodoro Clock</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+            color: white;
+            background-color: rgb(23, 72, 105);
+        }
+        
+        .container {
+            margin-top: 70px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+        }
+        
+        h3 {
+            margin-top: 20px;
+            font-size: 2em;
+        }
+        
+        .time {
+            display: flex;
+            margin-left: 42%;
+            margin-top: 30px;
+            font-size: 1.7em;
+        }
+        
+        .up {
+            margin: 20px;
+        }
+        
+        .number-count {
+            margin: 0 40px;
+        }
+        
+        #app {
+            font-size: 1.3em;
+            padding: 20px;
+            border: 3px solid rgb(41, 41, 112);
+            margin-top: 30px;
+            margin-left: 35%;
+            width: 400px;
+            border-radius: 40px;
+        }
+        
+        .setup-timer {
+            display: flex;
+            margin-left: 40%;
+            margin-top: 30px;
+            font-size: 1.7em;
+        }
+        
+        .start,
+        .stop {
+            margin-top: 20px;
+            margin-left: 44%;
+            margin-right: 20px;
+            font-size: 1.4em;
+        }
+        
+        button {
+            outline: none;
+            font-size: 1.3em;
+            border: none;
+        }
+        
+        i {
+            cursor: pointer;
+            margin-left: 15px;
+            font-size: 1.6em;
+        }
+    </style>
 </head>
 
 <body>
-  <div id="app">
+    <div class="container">
+        <h1>Pomodoro clock</h1>
+        <h3>Session length</h3>
+        <div class="time">
+            <button onclick="addOne()"><i class="fa fa-arrow-up up"></i></button>
+            <h1><span class="timer-down">25</span></h1>
+            <button onclick="removeOne()"><i class="fa fa-arrow-down up"></i></button>
+        </div>
+    </div>
+    <div id="app">
+        <h2>Session</h2>
+        <div class="setup-timer">
+            <span class="minutes">25</span>: <span class="seconds">00</span>
+        </div>
+    </div>
+    <button onclick="start()"><i class="fa fa-step-forward start"></i></button>
+    <button onclick="stop()"><i class="fa fa-pause stop"></i></button>
 
-  </div>
-  <script src="index.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>

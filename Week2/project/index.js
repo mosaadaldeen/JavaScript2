@@ -8,3 +8,59 @@
   If the timer finishes the timer should be replaced by the message: Time 's up!
  * 
  */
+
+let numberCount = document.querySelector('.timer-down').innerText;
+let setUpTimer = document.querySelector('.setup-timer');
+let minutes = document.querySelector('.minutes').innerText;
+let isRunning = false;
+let interval;
+let time = 60 * minutes;
+
+function start() {
+    if (isRunning) return;
+    isRunning = true;
+    interval = setInterval(decrementTimer, 1000);
+}
+
+function stop() {
+    if (!isRunning) return;
+    isRunning = false;
+    clearInterval(interval);
+}
+
+let decrementTimer = () => {
+    minutes = Math.floor(time / 60);
+    let seconds = pad(time % 60);
+    setUpTimer.innerText = `${minutes}:${seconds}`;
+    time--;
+    // if (seconds === 0 && minutes === 0) {
+    //     clearInterval(decrementTimer);
+    //     setUpTimer.innerText = 'Time\'s up';
+    // }
+};
+
+const pad = (number) => {
+    return (number < 10) ? '0' + number : number;
+};
+
+function addOne() {
+    if (!isRunning) {
+        numberCount++;
+        // minutes++;
+        document.querySelector('.timer-down').innerText = pad(numberCount);
+        // document.querySelector('.minutes').innerText = pad(minutes);
+    }
+}
+
+function removeOne() {
+    if (!isRunning) {
+        // minutes--;
+        numberCount--;
+        document.querySelector('.timer-down').innerText = pad(numberCount);
+        // document.querySelector('.minutes').innerText = pad(minutes);
+        if (numberCount === 1) {
+            alert('you can\'t go below 1!');
+            numberCount.innerText = 1;
+        }
+    }
+}
