@@ -12,10 +12,13 @@ does not return anything but removes any duplicate elements from the array.
 
 
 // WRITE YOUR FUNCTION HERE
-
+function removeDuplicates(letter) {
+    let uniq = [...new Set(letter)];
+    return uniq;
+}
 const letters = ['a', 'b', 'c', 'd', 'a', 'e', 'f', 'c', 'b'];
 
-removeDuplicates(letter);
+console.log(removeDuplicates(letters));
 
-if (letters === ['a', 'b', 'c', 'd', 'e', 'f'])
-  console.log("Hooray!")
+if (removeDuplicates(letters))
+    console.log("Hooray!");

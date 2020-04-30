@@ -2,14 +2,160 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tip Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #6c2900;
+        }
+        
+        .box {
+            margin: 100px auto;
+            border-radius: 20px;
+            /* text-align: center; */
+            width: 100%;
+            max-width: 360px;
+            border: 1px solid;
+            height: 450px;
+            padding-bottom: 20px;
+            background: white;
+            /* margin-bottom: 150px; */
+        }
+        
+        #Tip {
+            background: black;
+            color: white;
+            font-size: 2em;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            text-align: center;
+        }
+        
+        h3 {
+            margin-left: 25px;
+            background: white;
+        }
+        
+        .input-one {
+            margin-bottom: 20px;
+            margin-left: 30px;
+            background-color: white;
+        }
+        
+        .input-two {
+            /* margin-left: 25px; */
+            background-color: white;
+        }
+        
+        .input-two p,
+        #option {
+            background-color: white;
+        }
+        
+        .input-three {
+            margin-top: 20px;
+            background-color: white;
+        }
+        
+        .input-three input {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .input-three span {
+            font-size: 1.2em;
+            background-color: white;
+            margin-left: 5px;
+        }
+        
+        .box input {
+            padding: 6px;
+            /* margin-bottom: 20px; */
+            background-color: white;
+            /* border-radius: 5px; */
+            outline: none;
+            border: none;
+            border: 1px solid gray;
+        }
+        
+        .box #option {
+            border-bottom: 1px solid grey;
+            outline: none;
+            font-size: 1.2em;
+            width: 200px;
+            padding: 20px;
+            margin-left: 30px;
+            border-radius: 5px;
+        }
+        
+        .box button {
+            padding: 10px;
+            width: 150px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-left: 120px;
+            border-radius: 5px;
+            color: white;
+            background-color: #e02b0b;
+            align-items: center;
+        }
+        
+        .box #result {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 5px;
+            background: white;
+            margin-bottom: 5px;
+        }
+        
+        #each {
+            width: 100px;
+            margin-left: 150px;
+            text-align: center;
+            font-size: 1em;
+            background-color: white;
+        }
+    </style>
 </head>
 
 <body>
-  <div id="app"></div>
-  <script src="index.js"></script>
+    <div class="box" id="tip calculator">
+        <p id="Tip">Tip Calculator</p><br>
+        <h3>how much was your bill?</h3><br>
+        <div class="input-one"> $
+            <input id="bill" class="input" type="text" placeholder="type a number" required>
+        </div>
+        <div class="input-two">
+            <h3>how was your service?</h3><br>
+            <select id="option">
+        <option disabled selected value="0">Select option:</option>
+        <option value="0.3">30% -outstanding</option>
+        <option value="0.2">20% - good</option>
+        <option value="0.15">15% - it's ok </option>
+        <option value="0.1">10% - bad</option>
+        <option value="0.05">5% - terrible </option>
+      </select>
+        </div>
+        <div class="input-three">
+            <h3>how many people are sharing the bill?</h3><br>
+            <input id="people" class="input" type="text" placeholder="type a number" required><span> people</span>
+        </div>
+        <button id="myBtn" onclick="tipCalculate()">calculate </button><br>
+        <div id="result"></div>
+        <h3 id="each">each</h3>
+    </div>
+    <!-- <div id="app"></div> -->
+    <script src="index.js"></script>
 </body>
 
 </html>
