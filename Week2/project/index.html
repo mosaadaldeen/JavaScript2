@@ -18,6 +18,9 @@
         
         .container {
             margin-top: 70px;
+            text-align: center;
+            margin-right: auto;
+            margin-left: auto;
         }
         
         h1 {
@@ -31,7 +34,8 @@
         
         .time {
             display: flex;
-            margin-left: 42%;
+            margin-left: 40%;
+            margin-right: auto;
             margin-top: 30px;
             font-size: 1.7em;
         }
@@ -49,8 +53,9 @@
             padding: 20px;
             border: 3px solid rgb(41, 41, 112);
             margin-top: 30px;
-            margin-left: 35%;
-            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 300px;
             border-radius: 40px;
         }
         
@@ -79,6 +84,12 @@
             cursor: pointer;
             margin-left: 15px;
             font-size: 1.6em;
+        }
+        
+        @media(max-width: 700px) {
+            .time {
+                margin-left: 35%;
+            }
         }
     </style>
 </head>

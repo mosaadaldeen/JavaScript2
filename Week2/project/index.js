@@ -30,34 +30,31 @@ function stop() {
 
 let decrementTimer = () => {
     minutes = Math.floor(time / 60);
-    let seconds = pad(time % 60);
+    let seconds = padStart(time % 60);
+    minutes = numberCount - 1;
     setUpTimer.innerText = `${minutes}:${seconds}`;
     time--;
-    // if (seconds === 0 && minutes === 0) {
-    //     clearInterval(decrementTimer);
-    //     setUpTimer.innerText = 'Time\'s up';
-    // }
 };
 
-const pad = (number) => {
+const padStart = (number) => {
     return (number < 10) ? '0' + number : number;
 };
 
 function addOne() {
     if (!isRunning) {
         numberCount++;
-        // minutes++;
-        document.querySelector('.timer-down').innerText = pad(numberCount);
-        // document.querySelector('.minutes').innerText = pad(minutes);
+        minutes++;
+        document.querySelector('.timer-down').innerText = padStart(numberCount);
+        document.querySelector('.minutes').innerText = padStart(minutes);
     }
 }
 
 function removeOne() {
     if (!isRunning) {
-        // minutes--;
+        minutes--;
         numberCount--;
-        document.querySelector('.timer-down').innerText = pad(numberCount);
-        // document.querySelector('.minutes').innerText = pad(minutes);
+        document.querySelector('.timer-down').innerText = padStart(numberCount);
+        document.querySelector('.minutes').innerText = padStart(minutes);
         if (numberCount === 1) {
             alert('you can\'t go below 1!');
             numberCount.innerText = 1;
