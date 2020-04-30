@@ -7,7 +7,6 @@ Can you guess the output?
 Write out your reasoning in 50 words or less.
 
 */
-
 const x = 9;
 
 function f1(val) {
@@ -27,7 +26,6 @@ function f2(val) {
 }
 f2(y);
 console.log(y);
-
 /*
 The output of calling f1 is 10, we assign the variable x with the value of 9,
 then we call it as an argument in the function f1. The value of x in the 

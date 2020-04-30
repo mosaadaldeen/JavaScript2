@@ -16,9 +16,7 @@ function createBase(number) {
         return number;
     };
 }
-console.log(createBase(6));
 const addSix = createBase(6);
-
 // Put here your function calls...
 console.log(addSix());
 console.log(addSix());
